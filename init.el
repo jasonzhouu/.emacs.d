@@ -13,14 +13,14 @@
 ;; -----------------------------------------------------------------------------
 ;; personal configuration of           jason zhou                start
 ;; -----------------------------------------------------------------------------
-;;disable M-n key binding in markdown major mode
-;; (eval-after-load 'markdown
-;;   (progn
-;;    (define-key markdown-mode-map (kbd "M-n") nil)))
 
+;; https://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs
+;; https://emacs.stackexchange.com/questions/352/how-to-override-major-mode-bindings/360#360
 ;; deft: nv on emacs
-(global-set-key (kbd "<f9>") 'deft)
-(global-set-key "\M-n" 'deft)
+;; with bind-key 3rd party package, major mode key-binding can be overriden easily
+(bind-key* "M-n" 'deft)
+
+
 (setq deft-use-filename-as-title nil)
 ;; use the filter string as new file's name
 (setq deft-use-filter-string-for-filename 1)
@@ -40,13 +40,18 @@
 (setq redisplay-dont-pause nil) 
 
 ;; change font size to 200
-(set-face-attribute 'default nil :height 220)
+(set-face-attribute 'default nil :height 150)
 
-;; close tool bar
+;; hide tool bar
+;; https://www.emacswiki.org/emacs/ToolBar
 (tool-bar-mode -1)
 
+;; hide menu bar in both CLI and GUI mode
+;; https://www.emacswiki.org/emacs/MenuBar
+(menu-bar-mode -1)
+
 (global-undo-tree-mode 1)
-(global-linum-mode 1)
+(global-linum-mode -1)
 (global-visual-line-mode 1)
 
 ;; menu->file->open recent
@@ -140,7 +145,7 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(compilation-message-face (quote default))
- '(custom-enabled-themes (quote (deeper-blue)))
+ '(custom-enabled-themes (quote (adwaita)))
  '(custom-safe-themes
    (quote
     ("bd7b7c5df1174796deefce5debc2d976b264585d51852c962362be83932873d9" default)))
@@ -163,7 +168,7 @@
    (quote
     (("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/"))))
- '(package-selected-packages (quote (markdown-mode undo-tree deft)))
+ '(package-selected-packages (quote (bind-key markdown-mode undo-tree deft)))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(send-mail-function (quote mailclient-send-it))
