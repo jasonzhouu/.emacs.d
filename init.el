@@ -18,9 +18,11 @@
 ;; https://emacs.stackexchange.com/questions/352/how-to-override-major-mode-bindings/360#360
 ;; deft: nv on emacs
 ;; with bind-key 3rd party package, major mode key-binding can be overriden easily
+
+;; bind key to magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 (bind-key* "M-n" 'deft)
-
-
 (setq deft-use-filename-as-title nil)
 ;; use the filter string as new file's name
 (setq deft-use-filter-string-for-filename 1)
@@ -29,7 +31,9 @@
 ;; Prefix titles in new Markdown files with required number of hash marks
 (setq deft-markdown-mode-title-level 1)
 ;; set default loading file path
-(setq deft-directory "~/notes")
+;; (setq deft-directory "/Users/yushengzhou/Library/Mobile Documents/27N4MQEA55~pro~writer/Documents/notes")
+(setq deft-directory "~/Nutstore Files/notes")
+
 ;; deft.el:239 将子目录纳入检索范围
 (setq deft-recursive t)
 ;; save file interval
@@ -40,7 +44,7 @@
 (setq redisplay-dont-pause nil) 
 
 ;; change font size to 200
-(set-face-attribute 'default nil :height 150)
+(set-face-attribute 'default nil :height 200)
 
 ;; hide tool bar
 ;; https://www.emacswiki.org/emacs/ToolBar
@@ -48,7 +52,7 @@
 
 ;; hide menu bar in both CLI and GUI mode
 ;; https://www.emacswiki.org/emacs/MenuBar
-(menu-bar-mode -1)
+(menu-bar-mode 1)
 
 (global-undo-tree-mode 1)
 (global-linum-mode -1)
@@ -61,10 +65,10 @@
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;; close scroll bar
-(scroll-bar-mode -1)
+(scroll-bar-mode 1)
 
 ;; show line number
-;; (linum-mode 1)
+(linum-mode 1)
 
 ;; auto indent
 ;; (electric-indent-mode -1)
@@ -145,11 +149,11 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(compilation-message-face (quote default))
- '(custom-enabled-themes (quote (adwaita)))
+ '(custom-enabled-themes (quote (tsdh-dark)))
  '(custom-safe-themes
    (quote
     ("bd7b7c5df1174796deefce5debc2d976b264585d51852c962362be83932873d9" default)))
- '(deft-use-filename-as-title t)
+ '(deft-use-filename-as-title t t)
  '(fci-rule-color "#3C3D37")
  '(global-undo-tree-mode t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
@@ -166,9 +170,11 @@
  '(magit-diff-use-overlays nil)
  '(package-archives
    (quote
-    (("gnu" . "https://elpa.gnu.org/packages/")
-     ("melpa" . "https://melpa.org/packages/"))))
- '(package-selected-packages (quote (bind-key markdown-mode undo-tree deft)))
+    (("gnu" . "http://elpa.emacs-china.org/gnu/")
+     ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
+ '(package-selected-packages
+   (quote
+    (company go-mode magit bind-key markdown-mode undo-tree deft)))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(send-mail-function (quote mailclient-send-it))
