@@ -22,6 +22,9 @@
 ;; bind key to magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; use `company-mode` in all buffers
+(add-hook 'after-init-hook 'global-company-mode)
+
 (bind-key* "M-n" 'deft)
 (setq deft-use-filename-as-title nil)
 ;; use the filter string as new file's name
@@ -41,21 +44,25 @@
 
 
 ;; 解决 emacs.app 输入中文时光标跳动的问题
-(setq redisplay-dont-pause nil) 
+(setq redisplay-dont-pause nil)
 
-;; change font size to 200
+;; change font size to 200，只在图形界面下有效
 (set-face-attribute 'default nil :height 200)
 
 ;; hide tool bar
 ;; https://www.emacswiki.org/emacs/ToolBar
 (tool-bar-mode -1)
 
-;; hide menu bar in both CLI and GUI mode
+;; hide menu bar in both CLI and GUI mode 显示 menu
 ;; https://www.emacswiki.org/emacs/MenuBar
 (menu-bar-mode 1)
 
+;; evoke undo tree mode in all buffers 开启undo tree mode
 (global-undo-tree-mode 1)
-(global-linum-mode -1)
+
+;; show line number in all buffers 显示行号
+(global-linum-mode 1)
+
 (global-visual-line-mode 1)
 
 ;; menu->file->open recent
@@ -66,9 +73,6 @@
 
 ;; close scroll bar
 (scroll-bar-mode 1)
-
-;; show line number
-(linum-mode 1)
 
 ;; auto indent
 ;; (electric-indent-mode -1)
@@ -109,8 +113,8 @@
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
 
-;; highlight current editing line
-(global-hl-line-mode t)
+;; highlight current editing line 将光标所在行高亮
+(global-hl-line-mode 0)
 
 ;; highlight code in orgmode
 (setq org-src-fontify-natively 1)
