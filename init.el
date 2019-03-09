@@ -23,6 +23,7 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;; use `company-mode` in all buffers
+;; https://company-mode.github.io/
 (add-hook 'after-init-hook 'global-company-mode)
 
 (bind-key* "M-n" 'deft)
