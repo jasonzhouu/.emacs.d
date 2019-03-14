@@ -36,7 +36,7 @@
 (setq deft-markdown-mode-title-level 1)
 ;; set default loading file path
 ;; (setq deft-directory "/Users/yushengzhou/Library/Mobile Documents/27N4MQEA55~pro~writer/Documents/notes")
-(setq deft-directory "~/Nutstore Files/notes")
+(setq deft-directory "~/notes")
 
 ;; deft.el:239 将子目录纳入检索范围
 (setq deft-recursive t)
@@ -64,7 +64,7 @@
 ;; show line number in all buffers 显示行号
 (global-linum-mode 1)
 
-(global-visual-line-mode 1)
+;; (global-visual-line-mode 1)
 
 ;; menu->file->open recent
 (require 'recentf)
@@ -115,7 +115,7 @@
 
 
 ;; highlight current editing line 将光标所在行高亮
-(global-hl-line-mode 0)
+(global-hl-line-mode 1)
 
 ;; highlight code in orgmode
 (setq org-src-fontify-natively 1)
