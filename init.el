@@ -50,11 +50,11 @@
 
 ;; hide tool bar
 ;; https://www.emacswiki.org/emacs/ToolBar
-(tool-bar-mode -1)
+;; (tool-bar-mode -1)
 
 ;; hide menu bar in both CLI and GUI mode 显示 menu
 ;; https://www.emacswiki.org/emacs/MenuBar
-(menu-bar-mode 1)
+;; (menu-bar-mode 1)
 
 ;; evoke undo tree mode in all buffers 开启undo tree mode
 (global-undo-tree-mode 1)
