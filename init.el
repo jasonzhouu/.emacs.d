@@ -35,8 +35,9 @@
 ;; Prefix titles in new Markdown files with required number of hash marks
 (setq deft-markdown-mode-title-level 1)
 ;; set default loading file path
-;; (setq deft-directory "/Users/yushengzhou/Library/Mobile Documents/27N4MQEA55~pro~writer/Documents/notes")
+;; (setq deft-directory "/Users/yushengzhou/Library/Mobile Documents/
 (setq deft-directory "~/Nutstore Files/notes")
+
 ;; deft.el:239 将子目录纳入检索范围
 (setq deft-recursive t)
 ;; save file interval
@@ -63,7 +64,7 @@
 ;; show line number in all buffers 显示行号
 (global-linum-mode 1)
 
-(global-visual-line-mode 1)
+;; (global-visual-line-mode 1)
 
 ;; menu->file->open recent
 (require 'recentf)
