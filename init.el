@@ -60,7 +60,7 @@
 (global-undo-tree-mode 1)
 
 ;; show line number in all buffers 显示行号
-(global-linum-mode -1)
+(global-linum-mode 1)
 
 (global-visual-line-mode 1)
 
