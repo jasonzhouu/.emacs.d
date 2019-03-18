@@ -73,7 +73,6 @@
 ;; close scroll bar
 ;; (scroll-bar-mode 1)
 
-
 ;; auto indent
 ;; (electric-indent-mode -1)
 
