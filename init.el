@@ -37,24 +37,12 @@
 ;; set default loading file path
 (setq deft-directory "~/notes")
 ;; deft.el:239 将子目录纳入检索范围
-(setq deft-recursive t)
+;; (setq deft-recursive t)
 ;; save file interval
 (setq deft-auto-save-interval 0)
 
-
 ;; 解决 emacs.app 输入中文时光标跳动的问题
 (setq redisplay-dont-pause nil)
-
-;; change font size to 200，只在图形界面下有效
-(set-face-attribute 'default nil :height 200)
-
-;; hide tool bar
-;; https://www.emacswiki.org/emacs/ToolBar
-;; (tool-bar-mode -1)
-
-;; hide menu bar in both CLI and GUI mode 显示 menu
-;; https://www.emacswiki.org/emacs/MenuBar
-;; (menu-bar-mode 1)
 
 ;; evoke undo tree mode in all buffers 开启undo tree mode
 (global-undo-tree-mode 1)
@@ -62,18 +50,11 @@
 ;; show line number in all buffers 显示行号
 (global-linum-mode -1)
 
-;; (global-visual-line-mode 1)
-
 ;; menu->file->open recent
 (require 'recentf)
 (recentf-mode t)
 (setq rencentf-max-menu-items 25)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
-
-;; close scroll bar
-;; (scroll-bar-mode 1)
-;; auto indent
-;; (electric-indent-mode -1)
 
 ;; close "GNU Emacs" welcoming page when emacs is opened
 (setq inhibit-splash-screen 1)
@@ -95,13 +76,6 @@
 ;; don't make backup files which file name is ended with ~
 (setq make-backup-files nil)
 
-;; if edit while selection, character selected will be deleted
-;; (delete-selection-mode 1)
-
-;; full screen when open emacs.app
-(setq initial-frame-alist (quote ((fullscreen . maximized))))
-
-
 ;; when emacs-lisp-mode is activated, show-paren-mode is activated automatically
 ;; add-hook link these two mode
 ;; show-paren-mode is used two highlight parentheses pair when cursor is on parentheses
@@ -115,25 +89,6 @@
 
 ;; highlight code in orgmode
 (setq org-src-fontify-natively 1)
-
-;; define a function, and add it to meta-x
-(defun open-personal-configuration()
-  (interactive)
-
-  ;; "find-file" is the function that "ctrl-x ctrl-f" linked to
-  (find-file "~/.emacs.d/init.el"))
-
-;; transfer 'global-set-key' two parameter: keybinding and function
-(global-set-key (kbd "<f3>") 'open-personal-configuration)
-
-(defun open-home-directory()
-  (interactive)
-  (find-file "~/"))
-(global-set-key (kbd "<f1>") 'open-home-directory)
-(defun open-notes-directory()
-  (interactive)
-  (find-file "~/notes/"))
-(global-set-key (kbd "<f2>") 'open-notes-directory)
 
 ;; -----------------------------------------------------------------------------
 ;; personal configuration of               jason zhou              end
