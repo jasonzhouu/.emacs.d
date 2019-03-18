@@ -92,7 +92,6 @@
 ;; default tab-width is 8
 ;; (setq tab-width 4)
 
-
 ;; don't make backup files which file name is ended with ~
 (setq make-backup-files nil)
 
