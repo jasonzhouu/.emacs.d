@@ -37,7 +37,6 @@
 ;; set default loading file path
 ;; (setq deft-directory "/Users/yushengzhou/Library/Mobile Documents/27N4MQEA55~pro~writer/Documents/notes")
 (setq deft-directory "~/Nutstore Files/notes")
-
 ;; deft.el:239 将子目录纳入检索范围
 (setq deft-recursive t)
 ;; save file interval
@@ -115,15 +114,10 @@
 
 
 ;; highlight current editing line 将光标所在行高亮
-(global-hl-line-mode 0)
+(global-hl-line-mode 1)
 
 ;; highlight code in orgmode
 (setq org-src-fontify-natively 1)
-
-;; -----------------------------------------------------------------------------
-;; personal configuration of               jason zhou              end
-;; -----------------------------------------------------------------------------
-
 
 ;; define a function, and add it to meta-x
 (defun open-personal-configuration()
@@ -144,6 +138,10 @@
   (find-file "~/notes/"))
 (global-set-key (kbd "<f2>") 'open-notes-directory)
 
+;; -----------------------------------------------------------------------------
+;; personal configuration of               jason zhou              end
+;; -----------------------------------------------------------------------------
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -158,7 +156,7 @@
  '(custom-safe-themes
    (quote
     ("bd7b7c5df1174796deefce5debc2d976b264585d51852c962362be83932873d9" default)))
- '(deft-use-filename-as-title t t)
+ '(deft-use-filename-as-title t)
  '(fci-rule-color "#3C3D37")
  '(global-undo-tree-mode t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
@@ -179,7 +177,7 @@
      ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
  '(package-selected-packages
    (quote
-    (company go-mode magit bind-key markdown-mode undo-tree deft)))
+    (typescript-mode dired-git-info mediawiki company go-mode magit bind-key markdown-mode undo-tree deft)))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
  '(send-mail-function (quote mailclient-send-it))
