@@ -96,7 +96,7 @@
 (setq make-backup-files nil)
 
 ;; if edit while selection, character selected will be deleted
-(delete-selection-mode 1)
+;; (delete-selection-mode 1)
 
 ;; full screen when open emacs.app
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
