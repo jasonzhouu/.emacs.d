@@ -71,7 +71,7 @@
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;; close scroll bar
-(scroll-bar-mode 1)
+;; (scroll-bar-mode 1)
 
 ;; auto indent
 ;; (electric-indent-mode -1)
