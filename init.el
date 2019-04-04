@@ -16,9 +16,6 @@
 
 ;; https://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs
 ;; https://emacs.stackexchange.com/questions/352/how-to-override-major-mode-bindings/360#360
-;; deft: nv on emacs
-;; with bind-key 3rd party package, major mode key-binding can be overriden easily
-
 ;; bind key to magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
@@ -50,12 +47,6 @@
 ;; show line number in all buffers 显示行号
 (global-linum-mode 1)
 
-;; menu->file->open recent
-(require 'recentf)
-(recentf-mode t)
-(setq rencentf-max-menu-items 25)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
-
 ;; close "GNU Emacs" welcoming page when emacs is opened
 (setq inhibit-splash-screen 1)
 
@@ -70,8 +61,6 @@
 ;; https://www.emacswiki.org/emacs/NonBlinkingCursor
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Cursor-Display.html
 (blink-cursor-mode 0)
-;; default tab-width is 8
-;; (setq tab-width 4)
 
 ;; don't make backup files which file name is ended with ~
 (setq make-backup-files nil)
@@ -86,9 +75,6 @@
 
 ;; highlight current editing line 将光标所在行高亮
 (global-hl-line-mode 1)
-
-;; highlight code in orgmode
-(setq org-src-fontify-natively 1)
 
 ;; -----------------------------------------------------------------------------
 ;; personal configuration of               jason zhou              end
